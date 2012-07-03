@@ -1,0 +1,38 @@
+<p>
+	<a class='btn btn-primary btn-large' href='/'> Home </a>
+</p>
+<h1>
+	Box API Toolkit
+</h1><br />
+
+<p>
+	Base URI: https://www.box.com/api/2.0<br />
+	GET <input type="text" id="api" name="api" class="input input-xlarge search-query" placeholder="API URI">	
+	<button id="submit" class="btn btn-primary">Search</button>
+</p>
+<div id="spinner" style="display:none;"><img src="/ajax-spinner.gif"></div>
+<div id="result"></div>
+
+<script>
+
+$(document).ready(function(){ 
+
+   $("#submit").click(function() {
+
+		$("#spinner").show();
+		$("#result").empty();
+		$("#result").fadeOut("slow", function(){
+		
+		$.get('/callapi', { api: $("#api").val() }, function(data){
+			$("#spinner").hide();
+			$("#result").html(data);
+		});
+	});
+	$("#result").fadeIn("slow");
+   
+   });
+
+});
+
+</script>
+

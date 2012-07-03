@@ -1,0 +1,18 @@
+<h1>
+	Box API Toolkit
+</h1><br />
+
+<% if session["token"] %>
+
+<p>
+	<a class='btn btn-primary btn-large' href='/explorer'> APIs </a>
+	<a class='btn btn-primary btn-large' href='/logout'> Logout </a>
+</p>
+
+
+<% else %>
+<p>
+	<a class='btn btn-primary btn-large' href='/login'> Login >></a>
+</p>
+	
+<% end %>
