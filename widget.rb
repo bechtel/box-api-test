@@ -1,6 +1,6 @@
 %w(rubygems sinatra rest-client json).each { |lib| require lib }
 
-API_KEY = "5q0zra...laij5d"
+API_KEY = ""
 
 # LOCALHOST
 enable :sessions
@@ -46,7 +46,7 @@ end
 
 get "/callapi" do
   
-  # curl https://www.box.com/api/2.0/users -H "Authorization: BoxAuth api_key=5q0zra...laij5d&auth_token=k4rb...7z0"
+  # curl https://www.box.com/api/2.0/users -H "Authorization: BoxAuth api_key=blah&auth_token=blah2"
   
   @uri = "https://www.box.com/api/2.0" + params["api"]
 
